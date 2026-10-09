@@ -2,7 +2,7 @@
 
 > **Grupo:** 2 · **Repo:** goys-failover-grupo2 · **Vencimiento final:** vie 23/10
 
-> **F1 a F5 bloqueadas hasta la aprobación de F0** (regla de oro: primero el diseño, después el CLI).
+> **F0 entregada · F1 ejecutada (2 correcciones menores abiertas) · F2 en adelante: semana próxima.** Regla de oro: primero el diseño, después el CLI.
 
 ## Leyenda de estado
 
@@ -47,24 +47,24 @@
 ## Epic F1 — Topología + hardening + backup · *vence vie 9/10*
 
 ### Despliegue (7 CHR + 2 switches + 2 hosts)
-- [ ] [R1] armar (o abrir, si el docente lo entrega) el proyecto GNS3 con los 11 nodos y verificar el cableado contra `docs/f0/topologia-y-failover.md`
-- [ ] [R5] levantar los 2 switches y los 2 hosts
-- [ ] [R2] [R3] [R4] encender y nombrar los routers de su rol
+- [x] [R1] armar (o abrir, si el docente lo entrega) el proyecto GNS3 con los 11 nodos y verificar el cableado contra `docs/f0/topologia-y-failover.md`
+- [x] [R5] levantar los 2 switches y los 2 hosts
+- [x] [R2] [R3] [R4] encender y nombrar los routers de su rol
 
 ### IPs de enlace + loopbacks
-- [ ] [R1] [R2] [R3] [R4] configurar IPs de enlace y loopback según IPAM (cada rol, su parte)
-- [ ] [R5] verificar ping entre vecinos directos y registrar capturas
+- [x] [R1] [R2] [R3] [R4] configurar IPs de enlace y loopback según IPAM (cada rol, su parte)
+- [x] [R5] verificar ping entre vecinos directos y registrar capturas _(pings verificados por R1; capturas solo de ISP-2→EDGE y DIST-2, ver `docs/f1/verificacion-ips.md`)_
 
 ### Snapshot BASE
-- [ ] [R5] tomar snapshot BASE en GNS3 y documentarlo
+- [x] [R5] tomar snapshot BASE en GNS3 y documentarlo
 
 ### Hardening (los 7 routers)
-- [ ] [R1] [R2] [R3] [R4] cambiar password admin, crear usuario `monitor`, apagar servicios (cada rol, sus routers)
-- [ ] [R5] verificar hardening en los 7 routers (checklist)
+- [~] [R1] [R2] [R3] [R4] cambiar password admin, crear usuario `monitor`, apagar servicios (cada rol, sus routers) _(abierto: usuario `moonitor` en CORE-1 y cliente DHCP; ver `docs/f1/hardening-checklist.md`)_
+- [~] [R5] verificar hardening en los 7 routers (checklist) _(`docs/f1/hardening-checklist.md`, 2 correcciones abiertas)_
 
 ### Backup inicial (`/export`)
-- [ ] [R5] exportar `/export` de cada router y versionar en `backups/`
-- [ ] [R5] probar restore en un router y documentar evidencia
+- [x] [R5] exportar `/export` de cada router y versionar en `backups/` _(cada rol sube el `.rsc` de sus routers; R5 consolida)_
+- [x] [R5] probar restore en un router y documentar evidencia _(hecho en ISP-1)_
 
 ---
 
