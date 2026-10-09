@@ -62,11 +62,13 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 ├── README.md
 ├── backlog.md        # tareas con dueño y estado
 ├── docs/
-│   ├── f0/           # diseño aprobado en la fase 0
+│   ├── f0/ 
+|   ├── f1/   
 │   ├── diagramas/    # topología y diagramas de diseño
 │   └── memoria.md    # memoria final (F5)
 ├── configs/          # .rsc finales por router
 ├── backups/          # /export de cada router, por fecha
+|   ├── 2026-10-09/   
 ├── runbooks/         # un .md por drill de failover
 └── capturas/         # screenshots por drill
 ```
