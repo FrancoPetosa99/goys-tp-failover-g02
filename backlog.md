@@ -15,32 +15,32 @@
 ## Epic F0 — Diseño y gestión de cambio · *vence vie 2/10*
 
 ### IPAM / direccionamiento
-- [~] [R1] revisar tabla de enlaces y LANs del plan-f0.md y confirmar cero solapamiento
-- [ ] [R3] validar IPs de enlaces EDGE↔CORE y CORE↔DIST
-- [ ] [R4] validar LANs y VRRP (vrid, prioridades, IP virtual)
-- [ ] [R2] validar enlaces y loopbacks de ISP-1/ISP-2
-- [ ] [R5] consolidar router-ids y loopbacks en la tabla final
+- [x] [R1] revisar tabla de enlaces y LANs del plan-f0.md y confirmar cero solapamiento
+- [x] [R3] validar IPs de enlaces EDGE↔CORE y CORE↔DIST
+- [x] [R4] validar LANs y VRRP (vrid, prioridades, IP virtual)
+- [x] [R2] validar enlaces y loopbacks de ISP-1/ISP-2
+- [x] [R5] consolidar router-ids y loopbacks en la tabla final
 
 ### Corrección del diagrama (≥ 3 defectos)
-- [ ] [R1] redactar defectos 1 y 5 (firewall SPOF, RR mal ubicado) con justificación
-- [ ] [R3] redactar defectos 3 y 4 (core–core, HSRP→VRRP) con justificación
-- [ ] [R4] redactar defecto 2 (subredes solapadas) con justificación
-- [ ] [R5] redibujar diagrama corregido en `docs/diagramas/`
+- [x] [R1] redactar defectos 1 y 5 (firewall SPOF, RR mal ubicado) con justificación
+- [x] [R3] redactar defectos 3 y 4 (core–core, HSRP→VRRP) con justificación
+- [x] [R4] redactar defecto 2 (subredes solapadas) con justificación
+- [x] [R5] redibujar diagrama corregido en `docs/diagramas/`
 
 ### Política de seguridad
-- [ ] [R5] definir usuarios/privilegios (admin, monitor)
-- [ ] [R1] definir servicios a deshabilitar y diseño del firewall edge
-- [ ] [R2] definir claves de autenticación (OSPF, BGP ×2, VRRP) y cómo se comparten
+- [x] [R5] definir usuarios/privilegios (admin, monitor)
+- [x] [R1] definir servicios a deshabilitar y diseño del firewall edge
+- [x] [R2] definir claves de autenticación (OSPF, BGP ×2, VRRP) y cómo se comparten
 
 ### Política de operación (change log + backup)
-- [ ] [R5] definir formato de change log y convención de commits
-- [ ] [R5] definir política de backup (cuándo, cómo, nombres)
+- [x] [R5] definir formato de change log y convención de commits
+- [x] [R5] definir política de backup (cuándo, cómo, nombres)
 
 ### Repositorio git
-- [ ] [R1] crear repo y dar acceso al docente
-- [ ] [R5] subir estructura + README.md + backlog.md
-- [ ] [R1] [R2] [R3] [R4] [R5] primer commit de cada rol (trazabilidad por autor)
-- [ ] [R1] entregar plan F0 al docente para aprobación
+- [x] [R1] crear repo y dar acceso al docente
+- [x] [R5] subir estructura + README.md + backlog.md
+- [x] [R1] [R2] [R3] [R4] [R5] primer commit de cada rol (trazabilidad por autor)
+- [x] [R1] entregar plan F0 al docente para aprobación
 
 ---
 
