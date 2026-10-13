@@ -30,9 +30,9 @@ Laboratorio grupal de **Gestión Operativa y Seguridad en Redes (GOYS)**, UTN FR
 
 | Fase | Contenido | Vence | Estado |
 |:----:|-----------|:-----:|:------:|
-| F0 | Diseño y gestión de cambio | vie 2/10 | En revisión (gate) |
-| F1 | Topología + hardening + backup | vie 9/10 | Bloqueada hasta aprobar F0 |
-| F2 | VRRP + OSPF | vie 16/10 | Pendiente |
+| F0 | Diseño y gestión de cambio | vie 2/10 | Aprobada |
+| F1 | Topología + hardening + backup | vie 9/10 | Entregada |
+| F2 | VRRP + OSPF | vie 16/10 | En Ejecución |
 | F3 | BGP + firewall | vie 16/10 | Pendiente |
 | F4 | Drills de failover + monitoreo | mar 20/10 | Pendiente |
 | F5 | Memoria + defensa | vie 23/10 | Pendiente |
@@ -54,6 +54,33 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 | [`docs/f0/distribucion-vrrp.md`](docs/f0/distribucion-vrrp.md) | Defecto 2 y diseño VRRP | R4 |
 | [`docs/f0/ipam.md`](docs/f0/ipam.md) | Plan de direccionamiento consolidado | R5 |
 | [`docs/f0/operacion.md`](docs/f0/operacion.md) | Usuarios, change log y política de backup | R5 |
+
+## Índice de F1
+
+| Documento | Contenido | Responsable |
+|-----------|-----------|:-----------:|
+| [`docs/f1/despliegue-topologia.md`](docs/f1/despliegue-topologia.md) | Entorno, 11 nodos, 15 enlaces y verificación del cableado | R1 |
+| [`docs/f1/mapa-interfaces-e-incidente.md`](docs/f1/mapa-interfaces-e-incidente.md) | Interfaz ↔ vecino ↔ IP por router y post-mortem de la numeración | R1 |
+| [`docs/f1/verificacion-ips.md`](docs/f1/verificacion-ips.md) | IPs de enlace, loopbacks, hosts y pings | R5 |
+| [`docs/f1/snapshot-base.md`](docs/f1/snapshot-base.md) | Snapshot BASE de GNS3 | R5 |
+| [`docs/f1/hardening-checklist.md`](docs/f1/hardening-checklist.md) | Checklist de hardening de los 7 routers | R5 |
+| [`docs/f1/backup-y-restore.md`](docs/f1/backup-y-restore.md) | Exports iniciales y prueba de restore | R5 |
+| [`backups/2026-10-09/`](backups/2026-10-09/) | `/export terse` de cada router | R1 · R2 · R3 · R4 |
+| [`configs/hosts/`](configs/hosts/) | Configuración persistente de PC-USER y SRV | R5 |
+| [`capturas/f1/`](capturas/f1/) | Evidencia de la fase | todos |
+
+## Índice de F2
+
+| Documento | Contenido | Responsable |
+|-----------|-----------|:-----------:|
+| [`docs/f2/ospf-core-md5.md`](docs/f2/ospf-core-md5.md) | Diseño OSPF área 0 con MD5 y configuración del core (incluye core–core) | R3 |
+| [`docs/f2/ospf-edge.md`](docs/f2/ospf-edge.md) | OSPF en EDGE y observación de interfaces para F3 | R1 |
+| [`docs/f2/distribucion-vrrp-ospf.md`](docs/f2/distribucion-vrrp-ospf.md) | VRRP (vrid 10/20) y OSPF en DIST-1 y DIST-2 | R4 |
+| [`docs/f2/claves-y-secretos.md`](docs/f2/claves-y-secretos.md) | Claves aplicadas (OSPF, VRRP), hallazgos y desvíos | R2 |
+| [`docs/f2/verificacion.md`](docs/f2/verificacion.md) | Verificación de VRRP, 7 adyacencias OSPF, rutas y pings | R5 |
+| [`docs/f2/cambios.md`](docs/f2/cambios.md) | Registro de cambios de la fase | R5 |
+| [`backups/2026-10-13/`](backups/2026-10-13/) | `/export` de EDGE, CORE-1, CORE-2, DIST-1 y DIST-2 | R1 · R3 · R4 |
+| [`capturas/f2/`](capturas/f2/) | Evidencia de la fase | todos |
 
 ## Estructura del repositorio
 
