@@ -32,8 +32,8 @@ Laboratorio grupal de **Gestión Operativa y Seguridad en Redes (GOYS)**, UTN FR
 |:----:|-----------|:-----:|:------:|
 | F0 | Diseño y gestión de cambio | vie 2/10 | Aprobada |
 | F1 | Topología + hardening + backup | vie 9/10 | Entregada |
-| F2 | VRRP + OSPF | vie 16/10 | En Ejecución |
-| F3 | BGP + firewall | vie 16/10 | Pendiente |
+| F2 | VRRP + OSPF | vie 16/10 | Entregada |
+| F3 | BGP + firewall | vie 16/10 | En ejecución |
 | F4 | Drills de failover + monitoreo | mar 20/10 | Pendiente |
 | F5 | Memoria + defensa | vie 23/10 | Pendiente |
 
@@ -82,6 +82,21 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 | [`backups/2026-10-13/`](backups/2026-10-13/) | `/export` de EDGE, CORE-1, CORE-2, DIST-1 y DIST-2 | R1 · R3 · R4 |
 | [`capturas/f2/`](capturas/f2/) | Evidencia de la fase | todos |
 
+## Índice de F3
+
+| Documento | Contenido | Responsable |
+|-----------|-----------|:-----------:|
+| [`docs/f3/bgp-edge.md`](docs/f3/bgp-edge.md) | eBGP ×2 en EDGE, filtros, preferencia y redistribución OSPF→BGP | R1 |
+| [`docs/f3/firewall-edge.md`](docs/f3/firewall-edge.md) | Firewall default-deny, plano de gestión y pruebas permitidas/bloqueadas | R1 |
+| [`docs/f3/bgp-isp.md`](docs/f3/bgp-isp.md) | eBGP y default-originate en ISP-1 e ISP-2 | R2 |
+| [`docs/f3/claves-bgp.md`](docs/f3/claves-bgp.md) | Claves BGP, estado de los secretos y hallazgo de export | R2 |
+| [`docs/f3/ospf-default-y-core.md`](docs/f3/ospf-default-y-core.md) | Default por OSPF y propagación hacia el core | R3 |
+| [`docs/f3/salida-lans-y-traceroute.md`](docs/f3/salida-lans-y-traceroute.md) | Salida de las LANs a Internet: ping, traceroute y pruebas negativas | R4 |
+| [`docs/f3/verificacion.md`](docs/f3/verificacion.md) | Sesiones, matriz de pruebas y limitaciones | R5 |
+| [`docs/f3/cambios.md`](docs/f3/cambios.md) | Registro de cambios de la fase | R5 |
+| [`backups/2026-10-14/`](backups/2026-10-14/) | `/export` de EDGE, ISP-1 e ISP-2 | R1 · R2 |
+| [`capturas/f3/`](capturas/f3/) | Evidencia de la fase (46 capturas) | todos |
+
 ## Estructura del repositorio
 
 ```
@@ -91,11 +106,13 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 ├── docs/
 │   ├── f0/ 
 |   ├── f1/   
+|   ├── f2/   
 │   ├── diagramas/    # topología y diagramas de diseño
 │   └── memoria.md    # memoria final (F5)
 ├── configs/          # .rsc finales por router
 ├── backups/          # /export de cada router, por fecha
 |   ├── 2026-10-09/   
+|   ├── 2026-10-13/  
 ├── runbooks/         # un .md por drill de failover
 └── capturas/         # screenshots por drill
 ```
