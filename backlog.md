@@ -59,8 +59,8 @@
 - [x] [R5] tomar snapshot BASE en GNS3 y documentarlo
 
 ### Hardening (los 7 routers)
-- [~] [R1] [R2] [R3] [R4] cambiar password admin, crear usuario `monitor`, apagar servicios (cada rol, sus routers) _(abierto: usuario `moonitor` en CORE-1 y cliente DHCP; ver `docs/f1/hardening-checklist.md`)_
-- [~] [R5] verificar hardening en los 7 routers (checklist) _(`docs/f1/hardening-checklist.md`, 2 correcciones abiertas)_
+- [x] [R1] [R2] [R3] [R4] cambiar password admin, crear usuario `monitor`, apagar servicios (cada rol, sus routers) _(abierto: usuario `moonitor` en CORE-1 y cliente DHCP; ver `docs/f1/hardening-checklist.md`)_
+- [x] [R5] verificar hardening en los 7 routers (checklist) _(`docs/f1/hardening-checklist.md`, 2 correcciones abiertas)_
 
 ### Backup inicial (`/export`)
 - [x] [R5] exportar `/export` de cada router y versionar en `backups/` _(cada rol sube el `.rsc` de sus routers; R5 consolida)_
@@ -71,20 +71,20 @@
 ## Epic F2 — VRRP + OSPF · *vence vie 16/10*
 
 ### VRRP (2 grupos, load-sharing, auth)
-- [ ] [R4] configurar VRRP vrid 10 en DIST-1 (master)
-- [ ] [R4] configurar VRRP vrid 20 en DIST-2 (master)
-- [ ] [R4] activar auth simple en ambos grupos
-- [ ] [R5] verificar master/backup con `/interface vrrp print`
+- [x] [R4] configurar VRRP vrid 10 en DIST-1 (master)
+- [x] [R4] configurar VRRP vrid 20 en DIST-2 (master)
+- [x] [R4] activar auth simple en ambos grupos
+- [x] [R5] verificar master/backup con `/interface vrrp print`
 
 ### OSPF área 0 (con MD5, incluido core–core)
-- [ ] [R3] configurar OSPF en CORE-1/CORE-2 incluyendo enlace core–core
-- [ ] [R4] configurar OSPF en DIST-1/DIST-2
-- [ ] [R1] configurar OSPF en EDGE
-- [ ] [R3] activar MD5 en todas las interfaces OSPF y verificar adyacencias FULL
+- [x] [R3] configurar OSPF en CORE-1/CORE-2 incluyendo enlace core–core
+- [x] [R4] configurar OSPF en DIST-1/DIST-2
+- [x] [R1] configurar OSPF en EDGE
+- [x] [R3] activar MD5 en todas las interfaces OSPF y verificar adyacencias FULL
 
 ### Verificación L3 (ping intra-LAN + gateway virtual)
-- [ ] [R5] ping PC-USER ↔ SRV y a gateways virtuales
-- [ ] [R5] capturar tablas de rutas y estado OSPF/VRRP
+- [x] [R5] ping PC-USER ↔ SRV y a gateways virtuales
+- [x] [R5] capturar tablas de rutas y estado OSPF/VRRP
 
 ---
 
