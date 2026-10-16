@@ -31,9 +31,9 @@ Laboratorio grupal de **Gestión Operativa y Seguridad en Redes (GOYS)**, UTN FR
 | Fase | Contenido | Vence | Estado |
 |:----:|-----------|:-----:|:------:|
 | F0 | Diseño y gestión de cambio | vie 2/10 | Aprobada |
-| F1 | Topología + hardening + backup | vie 9/10 | Entregada |
+| F1 | Topología + hardening + backup | vie 9/10 | Aprobada |
 | F2 | VRRP + OSPF | vie 16/10 | Entregada |
-| F3 | BGP + firewall | vie 16/10 | En ejecución |
+| F3 | BGP + firewall | vie 16/10 | Entregada |
 | F4 | Drills de failover + monitoreo | mar 20/10 | Pendiente |
 | F5 | Memoria + defensa | vie 23/10 | Pendiente |
 
@@ -107,14 +107,19 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 │   ├── f0/ 
 |   ├── f1/   
 |   ├── f2/   
+|   ├── f3/   
 │   ├── diagramas/    # topología y diagramas de diseño
 │   └── memoria.md    # memoria final (F5)
 ├── configs/          # .rsc finales por router
 ├── backups/          # /export de cada router, por fecha
 |   ├── 2026-10-09/   
 |   ├── 2026-10-13/  
+|   ├── 2026-10-14/  
 ├── runbooks/         # un .md por drill de failover
 └── capturas/         # screenshots por drill
+    ├── f1/   
+    ├── f2/   
+    └── f3/
 ```
 
 ## Convención de commits
