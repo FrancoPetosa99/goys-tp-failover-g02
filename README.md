@@ -31,10 +31,10 @@ Laboratorio grupal de **Gestión Operativa y Seguridad en Redes (GOYS)**, UTN FR
 | Fase | Contenido | Vence | Estado |
 |:----:|-----------|:-----:|:------:|
 | F0 | Diseño y gestión de cambio | vie 2/10 | Aprobada |
-| F1 | Topología + hardening + backup | vie 9/10 | Entregada |
+| F1 | Topología + hardening + backup | vie 9/10 | Aprobada |
 | F2 | VRRP + OSPF | vie 16/10 | Entregada |
-| F3 | BGP + firewall | vie 16/10 | En ejecución |
-| F4 | Drills de failover + monitoreo | mar 20/10 | Pendiente |
+| F3 | BGP + firewall | vie 16/10 | Entregada |
+| F4 | Drills de failover + monitoreo | mar 20/10 | En Ejecución |
 | F5 | Memoria + defensa | vie 23/10 | Pendiente |
 
 Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas en [`backlog.md`](backlog.md).
@@ -97,6 +97,29 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 | [`backups/2026-10-14/`](backups/2026-10-14/) | `/export` de EDGE, ISP-1 e ISP-2 | R1 · R2 |
 | [`capturas/f3/`](capturas/f3/) | Evidencia de la fase (46 capturas) | todos |
 
+## Índice de F4
+
+| Documento | Contenido | Responsable |
+|-----------|-----------|:-----------:|
+| [`docs/f1/correccion-dhcp-client.md`](docs/f1/correccion-dhcp-client.md) | Corrección de la devolución de F1: cliente DHCP removido de los 7 routers | R1 |
+| [`runbooks/drill-1-vrrp.md`](runbooks/drill-1-vrrp.md) | Drill 1: falla del master VRRP (corte ≈ 3 s) | R4 |
+| [`runbooks/drill-2-ospf.md`](runbooks/drill-2-ospf.md) | Drill 2: caída de enlace OSPF (≈ 31 s por timers, ≈ 1 s por portadora) | R3 |
+| [`runbooks/drill-3-bgp.md`](runbooks/drill-3-bgp.md) | Drill 3: cae el proveedor principal (≈ 160 s solo con BGP) | R1 |
+| [`runbooks/drill-4-check-gateway.md`](runbooks/drill-4-check-gateway.md) | Drill 4: `check-gateway` (≈ 23 s) | R1 |
+| [`runbooks/drill-5-load-sharing.md`](runbooks/drill-5-load-sharing.md) | Drill 5: reparto de carga de VRRP | R4 |
+| [`docs/f4/clave-vrrp-incorrecta.md`](docs/f4/clave-vrrp-incorrecta.md) | Clave VRRP incorrecta: autenticación rechazada y dos masters | R4 |
+| [`docs/f4/clave-ospf-incorrecta.md`](docs/f4/clave-ospf-incorrecta.md) | Clave OSPF incorrecta: `md5 mismatch` y adyacencia caída | R3 |
+| [`docs/f4/clave-bgp-incorrecta.md`](docs/f4/clave-bgp-incorrecta.md) | Clave BGP incorrecta y reglas `in-bgp-*` con conexión iniciada por el ISP | R1 |
+| [`docs/f4/ospf-default-if-installed.md`](docs/f4/ospf-default-if-installed.md) | `originate-default`: `always` contra `if-installed` | R3 |
+| [`docs/f4/internet-simulada.md`](docs/f4/internet-simulada.md) | Destino `203.0.113.1` en los dos ISP | R2 |
+| [`docs/f4/snmpv3-claves.md`](docs/f4/snmpv3-claves.md) | SNMPv3 en los 7 routers, engine-id y hallazgos | R2 |
+| [`docs/f4/monitoreo.md`](docs/f4/monitoreo.md) | Qué se monitorea, alertas por netwatch y syslog, y lo no demostrado | R5 |
+| [`docs/f4/ejecucion.md`](docs/f4/ejecucion.md) | Sesiones, quién operó, rotación y relojes | R5 |
+| [`docs/f4/verificacion.md`](docs/f4/verificacion.md) | Tiempos, matriz de pruebas y limitaciones | R5 |
+| [`docs/f4/cambios.md`](docs/f4/cambios.md) | Registro de cambios de la fase | R5 |
+| [`backups/2026-10-17/`](backups/2026-10-17/) | `/export` de los 7 routers, sin cliente DHCP | R1 · R2 · R3 · R4 |
+| [`capturas/f4/`](capturas/f4/) · [`capturas/f1/`](capturas/f1/) | Evidencia de la fase (80 capturas de F4 y 9 de la corrección de F1) | todos |
+
 ## Estructura del repositorio
 
 ```
@@ -107,14 +130,19 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 │   ├── f0/ 
 |   ├── f1/   
 |   ├── f2/   
+|   ├── f3/   
 │   ├── diagramas/    # topología y diagramas de diseño
 │   └── memoria.md    # memoria final (F5)
 ├── configs/          # .rsc finales por router
 ├── backups/          # /export de cada router, por fecha
 |   ├── 2026-10-09/   
 |   ├── 2026-10-13/  
+|   ├── 2026-10-14/  
 ├── runbooks/         # un .md por drill de failover
 └── capturas/         # screenshots por drill
+    ├── f1/   
+    ├── f2/   
+    └── f3/
 ```
 
 ## Convención de commits

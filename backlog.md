@@ -91,19 +91,19 @@
 ## Epic F3 — BGP + firewall · *vence vie 16/10*
 
 ### eBGP multi-homing (2 sesiones, TCP-MD5)
-- [ ] [R2] configurar eBGP en ISP-1 e ISP-2 con default-originate
-- [ ] [R1] configurar eBGP ×2 en EDGE
-- [ ] [R1] [R2] activar TCP-MD5 en ambas sesiones y verificar established
+- [x] [R2] configurar eBGP en ISP-1 e ISP-2 con default-originate
+- [x] [R1] configurar eBGP ×2 en EDGE
+- [x] [R1] [R2] activar TCP-MD5 en ambas sesiones y verificar established
 
 ### Redistribución OSPF→BGP
-- [ ] [R1] redistribuir OSPF→BGP y verificar que los ISP aprenden las LANs
+- [x] [R1] redistribuir OSPF→BGP y verificar que los ISP aprenden las LANs
 
 ### Salida a "Internet" (host → loopback ISP)
-- [ ] [R5] ping/traceroute de PC-USER y SRV a loopbacks de ISP
+- [x] [R5] ping/traceroute de PC-USER y SRV a loopbacks de ISP
 
 ### Firewall edge (filtro + plano de gestión)
-- [ ] [R1] implementar filtro de entrada y proteger plano de gestión
-- [ ] [R5] verificar reglas con pruebas permitidas/bloqueadas
+- [x] [R1] implementar filtro de entrada y proteger plano de gestión
+- [x] [R5] verificar reglas con pruebas permitidas/bloqueadas
 
 ---
 
