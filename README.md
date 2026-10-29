@@ -34,8 +34,8 @@ Laboratorio grupal de **Gestión Operativa y Seguridad en Redes (GOYS)**, UTN FR
 | F1 | Topología + hardening + backup | vie 9/10 | Aprobada |
 | F2 | VRRP + OSPF | vie 16/10 | Entregada |
 | F3 | BGP + firewall | vie 16/10 | Entregada |
-| F4 | Drills de failover + monitoreo | mar 20/10 | En Ejecución |
-| F5 | Memoria + defensa | vie 23/10 | Pendiente |
+| F4 | Drills de failover + monitoreo | mar 20/10 | Entregada |
+| F5 | Memoria + defensa | vie 23/10 | En curso — memoria y defensa redactadas (`docs/memoria.md`, `docs/defensa.md`); falta confirmación y commit por rol |
 
 Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas en [`backlog.md`](backlog.md).
 
@@ -52,8 +52,8 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 | [`docs/f0/proveedores-claves.md`](docs/f0/proveedores-claves.md) | Validación ISP y política de claves de autenticación | R2 |
 | [`docs/f0/core-defectos.md`](docs/f0/core-defectos.md) | Defectos 3 y 4 (core–core, HSRP→VRRP) | R3 |
 | [`docs/f0/distribucion-vrrp.md`](docs/f0/distribucion-vrrp.md) | Defecto 2 y diseño VRRP | R4 |
-| [`docs/f0/ipam.md`](docs/f0/ipam.md) | Plan de direccionamiento consolidado | R5 |
-| [`docs/f0/operacion.md`](docs/f0/operacion.md) | Usuarios, change log y política de backup | R5 |
+| [`ipam.md`](ipam.md) | Plan de direccionamiento consolidado | R5 |
+| [`operacion.md`](operacion.md) | Usuarios, change log y política de backup | R5 |
 
 ## Índice de F1
 
@@ -120,29 +120,38 @@ Ningún nodo se enciende hasta que el docente apruebe F0. Seguimiento de tareas 
 | [`backups/2026-10-17/`](backups/2026-10-17/) | `/export` de los 7 routers, sin cliente DHCP | R1 · R2 · R3 · R4 |
 | [`capturas/f4/`](capturas/f4/) · [`capturas/f1/`](capturas/f1/) | Evidencia de la fase (80 capturas de F4 y 9 de la corrección de F1) | todos |
 
+## Índice de F5
+
+| Documento | Contenido | Responsable |
+|-----------|-----------|:-----------:|
+| [`docs/memoria.md`](docs/memoria.md) | Memoria final: diseño por capa, tiempos de failover, change log y backups consolidados, limitaciones | R5 (consolidación) · R1-R4 (configs finales y secciones de rol) |
+| [`docs/defensa.md`](docs/defensa.md) | Material de defensa oral por rol, cruce de roles, números clave y decisiones de diseño | todos |
+| [`docs/f5/observaciones.md`](docs/f5/observaciones.md) | Inconsistencias detectadas entre fases (sin modificar los documentos originales) | R5 |
+| [`configs/`](configs/) | `.rsc` finales de los 7 routers (copia de `backups/2026-10-17/`) + config de los hosts | R1 · R2 · R3 · R4 (confirmación pendiente) |
+
 ## Estructura del repositorio
 
 ```
 .
 ├── README.md
 ├── backlog.md        # tareas con dueño y estado
+├── ipam.md           # plan de direccionamiento (F0)
+├── operacion.md       # usuarios, change log y backup (F0)
 ├── docs/
-│   ├── f0/ 
-|   ├── f1/   
-|   ├── f2/   
-|   ├── f3/   
+│   ├── f0/ … f4/
+│   ├── f5/           # observaciones.md (F5)
 │   ├── diagramas/    # topología y diagramas de diseño
-│   └── memoria.md    # memoria final (F5)
-├── configs/          # .rsc finales por router
+│   ├── memoria.md    # memoria final (F5)
+│   └── defensa.md    # material de defensa oral (F5)
+├── configs/          # .rsc finales por router + hosts/
 ├── backups/          # /export de cada router, por fecha
-|   ├── 2026-10-09/   
-|   ├── 2026-10-13/  
-|   ├── 2026-10-14/  
+│   ├── 2026-10-09/
+│   ├── 2026-10-13/
+│   ├── 2026-10-14/
+│   └── 2026-10-17/   # estado vigente
 ├── runbooks/         # un .md por drill de failover
 └── capturas/         # screenshots por drill
-    ├── f1/   
-    ├── f2/   
-    └── f3/
+    ├── f1/ … f4/
 ```
 
 ## Convención de commits

@@ -110,21 +110,21 @@
 ## Epic F4 — Drills + monitoreo · *vence mar 20/10*
 
 ### Los 5 drills (runbook + post-mortem + tiempo)
-- [ ] [R5] drill 1 VRRP: runbook, ejecución, tiempo, post-mortem
-- [ ] [R5] drill 2 OSPF: runbook, ejecución, tiempo, post-mortem
-- [ ] [R5] drill 3 BGP (cae proveedor): runbook, ejecución, tiempo, post-mortem
-- [ ] [R5] drill 4 check-gateway: runbook, ejecución, tiempo, post-mortem
-- [ ] [R5] drill 5 load-sharing VRRP: runbook, ejecución, post-mortem
-- [ ] [R1] [R2] rotación de roles en esta fase (R1↔R2): ejecutar un drill intercambiados
+- [x] [R5] drill 1 VRRP: runbook, ejecución, tiempo, post-mortem
+- [x] [R5] drill 2 OSPF: runbook, ejecución, tiempo, post-mortem
+- [x] [R5] drill 3 BGP (cae proveedor): runbook, ejecución, tiempo, post-mortem
+- [x] [R5] drill 4 check-gateway: runbook, ejecución, tiempo, post-mortem
+- [x] [R5] drill 5 load-sharing VRRP: runbook, ejecución, post-mortem
+- [x] [R1] [R2] rotación de roles en esta fase (R1↔R2): ejecutar un drill intercambiados
 
 ### Monitoreo (SNMP/chequeos)
-- [ ] [R5] habilitar SNMP/chequeos con usuario `monitor`
-- [ ] [R5] documentar qué se monitorea (enlaces, vecinos OSPF, sesiones BGP, VRRP)
+- [x] [R5] habilitar SNMP/chequeos con usuario `monitor`
+- [x] [R5] documentar qué se monitorea (enlaces, vecinos OSPF, sesiones BGP, VRRP)
 
 ### Verificación de seguridad (clave incorrecta falla)
-- [ ] [R3] probar clave OSPF incorrecta → adyacencia falla (documentar)
-- [ ] [R1] probar clave BGP incorrecta → sesión falla (documentar)
-- [ ] [R4] probar clave VRRP incorrecta → no se forma el grupo (documentar)
+- [x] [R3] probar clave OSPF incorrecta → adyacencia falla (documentar)
+- [x] [R1] probar clave BGP incorrecta → sesión falla (documentar)
+- [x] [R4] probar clave VRRP incorrecta → no se forma el grupo (documentar)
 
 ---
 
